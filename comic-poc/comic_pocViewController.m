@@ -8,6 +8,9 @@
 
 #import "comic_pocViewController.h"
 
+#define WIDTH 1024
+#define HEIGHT 768
+
 @implementation comic_pocViewController
 @synthesize scrollView, imageViewA, imageViewB, imageViewC;
 
@@ -40,17 +43,20 @@
     imageViewB = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layer-b.png"]];
     imageViewC = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layer-c.png"]];
     
+    imageViewA.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    imageViewB.frame = CGRectMake(WIDTH, 0, WIDTH, HEIGHT);
+    imageViewC.frame = CGRectMake(WIDTH * 2, 0, WIDTH, HEIGHT);
+    
     imageViewA.userInteractionEnabled = YES;
     imageViewB.userInteractionEnabled = YES;
     imageViewC.userInteractionEnabled = YES;
     
-    //imageViewA.autoresizingMask = (UIViewAutoresizingFlexibleHeight);x
-    
-    scrollView.contentSize = CGSizeMake(imageViewA.frame.size.width , imageViewA.frame.size.height);
+    scrollView.contentSize = CGSizeMake(WIDTH * 3, HEIGHT);
     scrollView.maximumZoomScale = 4.0;
     scrollView.minimumZoomScale = 1.0;
     scrollView.clipsToBounds = NO;
     scrollView.delegate = self;
+    scrollView.pagingEnabled = YES;
     
     scrollView.contentMode = (UIViewContentModeScaleAspectFit);
     scrollView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
