@@ -63,36 +63,37 @@
     pageB.backgroundColor = [UIColor blueColor];
     pageC.backgroundColor = [UIColor greenColor];
     
-    pageA.maximumZoomScale = 1.0f; 
-    pageA.maximumZoomScale = 4.0f; 
-    pageA.zoomScale = 1.0f;
+    pageA.minimumZoomScale = 1.0f;  
+    pageB.minimumZoomScale = 1.0f;
+    pageC.minimumZoomScale = 1.0f;
     
-    pageB.maximumZoomScale = 1.0f; 
     pageB.maximumZoomScale = 4.0f; 
-    pageB.zoomScale = 1.0f;
+    pageC.maximumZoomScale = 4.0f;
+    pageA.maximumZoomScale = 4.0f;
     
-    pageC.maximumZoomScale = 1.0f; 
-    pageC.maximumZoomScale = 4.0f; 
+    pageA.zoomScale = 1.0f;
+    pageB.zoomScale = 1.0f;
     pageC.zoomScale = 1.0f;
     
     pageA.clipsToBounds = NO; 
-    pageA.scrollsToTop = NO; 
-    pageA.delegate = self;
-    
-    
     pageB.clipsToBounds = NO; 
-    pageB.scrollsToTop = NO; 
-    pageB.delegate = self;
-    
     pageC.clipsToBounds = NO; 
+    
+    pageA.scrollsToTop = NO; 
+    pageB.scrollsToTop = NO;
     pageC.scrollsToTop = NO; 
+    
+    // this causes warnings
+    pageA.delegate = self;
+    pageB.delegate = self;
     pageC.delegate = self;
     
-    pageA.showsHorizontalScrollIndicator = NO; 
-    pageA.showsVerticalScrollIndicator = NO;
-    pageB.showsHorizontalScrollIndicator = NO; 
-    pageB.showsVerticalScrollIndicator = NO;
+    pageA.showsHorizontalScrollIndicator = NO;
+    pageB.showsHorizontalScrollIndicator = NO;
     pageC.showsHorizontalScrollIndicator = NO; 
+    
+    pageA.showsVerticalScrollIndicator = NO;
+    pageB.showsVerticalScrollIndicator = NO;
     pageC.showsVerticalScrollIndicator = NO;
     
     pageA.decelerationRate = 0.5f; 
@@ -100,10 +101,11 @@
     pageC.decelerationRate = 0.5f;
     
     pageA.alwaysBounceVertical = YES; 
-    pageA.alwaysBounceHorizontal = YES;
     pageB.alwaysBounceVertical = YES; 
+    pageC.alwaysBounceVertical = YES;
+    
+    pageA.alwaysBounceHorizontal = YES;
     pageB.alwaysBounceHorizontal = YES;
-    pageC.alwaysBounceVertical = YES; 
     pageC.alwaysBounceHorizontal = YES;
     
     pageA.bouncesZoom = NO; 
@@ -120,11 +122,12 @@
     
     // paging stuff
     
-    self.pageArray = [NSArray arrayWithObjects:pageA, pageB, pageC, nil];
     page = 0;
     
+    self.pageArray = [NSArray arrayWithObjects:pageA, pageB, pageC, nil];
     [self.view insertSubview:[self.pageArray objectAtIndex:page] atIndex:0];
     
+    // populate initial page with content
     [[self.pageArray objectAtIndex:page] insertSubview:layerA atIndex:0];
     [[self.pageArray objectAtIndex:page] insertSubview:layerB atIndex:1];
     [[self.pageArray objectAtIndex:page] insertSubview:layerC atIndex:2];
@@ -152,43 +155,50 @@
 
 - (IBAction)prevPressed {
     if (page > 0) {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.view cache:YES];
-        
-        [[self.pageArray objectAtIndex:page] removeFromSuperview];
-        [self.view insertSubview:[self.pageArray objectAtIndex:(page - 1)] atIndex:0];
-        
-        [UIView commitAnimations];
-        
+        [UIView transitionWithView:[self.pageArray objectAtIndex:page] duration:0.5
+                           options:UIViewAnimationOptionTransitionCurlUp
+                        animations:^ { 
+                            [[self.pageArray objectAtIndex:page] setHidden:YES];
+                            [self.view insertSubview:[self.pageArray objectAtIndex:(page - 1)] atIndex:0];
+                        }
+                        completion:^(BOOL completed) {
+                            if (completed) {
+                                [[self.pageArray objectAtIndex:page] removeFromSuperview];
+                                [[self.pageArray objectAtIndex:page] setHidden:NO];
+                                
+                                page--;
+                            }
+                        }
+         ];        
         // move content to prev page
         [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerA atIndex:0];
         [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerB atIndex:1];
         [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerC atIndex:2];
-        
-        page--;
     }
 }
 
 - (IBAction)nextPressed {
     if (page < [self.pageArray count] - 1) {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
-        
-        [[self.pageArray objectAtIndex:page] removeFromSuperview];
-        [self.view insertSubview:[self.pageArray objectAtIndex:(page + 1)] atIndex:0];
-        
-        [UIView commitAnimations];
+        [UIView transitionWithView:[self.pageArray objectAtIndex:page] duration:0.5
+                           options:UIViewAnimationOptionTransitionCurlUp
+                        animations:^ { 
+                            [[self.pageArray objectAtIndex:page] setHidden:YES];
+                            [self.view insertSubview:[self.pageArray objectAtIndex:(page + 1)] atIndex:0];
+                        }
+                        completion:^(BOOL completed) {
+                            if (completed) {
+                                [[self.pageArray objectAtIndex:page] removeFromSuperview];
+                                [[self.pageArray objectAtIndex:page] setHidden:NO];
+
+                                page++;
+                            }
+                        }
+         ];
         
         // move content to next page
         [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerA atIndex:0];
         [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerB atIndex:1];
         [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerC atIndex:2];
-    
-        page++;
     }
 }
 
