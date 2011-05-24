@@ -7,113 +7,113 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D906A246138ADB1A00F788DA /* layer-a.png in Resources */ = {isa = PBXBuildFile; fileRef = D906A243138ADB1A00F788DA /* layer-a.png */; };
-		D906A247138ADB1A00F788DA /* layer-b.png in Resources */ = {isa = PBXBuildFile; fileRef = D906A244138ADB1A00F788DA /* layer-b.png */; };
-		D906A24A138AFC4B00F788DA /* layer-c.png in Resources */ = {isa = PBXBuildFile; fileRef = D906A249138AFC4B00F788DA /* layer-c.png */; };
-		D954594C138AB6E100F302A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D954594B138AB6E100F302A5 /* UIKit.framework */; };
-		D954594E138AB6E100F302A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D954594D138AB6E100F302A5 /* Foundation.framework */; };
-		D9545950138AB6E100F302A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D954594F138AB6E100F302A5 /* CoreGraphics.framework */; };
-		D9545956138AB6E100F302A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9545954138AB6E100F302A5 /* InfoPlist.strings */; };
-		D9545959138AB6E100F302A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9545958138AB6E100F302A5 /* main.m */; };
-		D954595C138AB6E100F302A5 /* comic_pocAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D954595B138AB6E100F302A5 /* comic_pocAppDelegate.m */; };
-		D954595F138AB6E100F302A5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D954595D138AB6E100F302A5 /* MainWindow.xib */; };
-		D9545962138AB6E100F302A5 /* comic_pocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9545961138AB6E100F302A5 /* comic_pocViewController.m */; };
-		D9545965138AB6E100F302A5 /* comic_pocViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9545963138AB6E100F302A5 /* comic_pocViewController.xib */; };
+		D9E6ABEE138C274C00D40AA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6ABED138C274C00D40AA1 /* UIKit.framework */; };
+		D9E6ABF0138C274C00D40AA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6ABEF138C274C00D40AA1 /* Foundation.framework */; };
+		D9E6ABF2138C274C00D40AA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E6ABF1138C274C00D40AA1 /* CoreGraphics.framework */; };
+		D9E6ABF8138C274C00D40AA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9E6ABF6138C274C00D40AA1 /* InfoPlist.strings */; };
+		D9E6ABFB138C274C00D40AA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E6ABFA138C274C00D40AA1 /* main.m */; };
+		D9E6ABFE138C274C00D40AA1 /* comic_pocAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E6ABFD138C274C00D40AA1 /* comic_pocAppDelegate.m */; };
+		D9E6AC01138C274C00D40AA1 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9E6ABFF138C274C00D40AA1 /* MainWindow.xib */; };
+		D9E6AC04138C274C00D40AA1 /* comic_pocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E6AC03138C274C00D40AA1 /* comic_pocViewController.m */; };
+		D9E6AC07138C274C00D40AA1 /* comic_pocViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9E6AC05138C274C00D40AA1 /* comic_pocViewController.xib */; };
+		D9E6AC10138C3F5700D40AA1 /* layer-b.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E6AC0D138C3F5700D40AA1 /* layer-b.png */; };
+		D9E6AC11138C3F5700D40AA1 /* layer-a.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E6AC0E138C3F5700D40AA1 /* layer-a.png */; };
+		D9E6AC12138C3F5700D40AA1 /* layer-c.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E6AC0F138C3F5700D40AA1 /* layer-c.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D906A243138ADB1A00F788DA /* layer-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-a.png"; sourceTree = "<group>"; };
-		D906A244138ADB1A00F788DA /* layer-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-b.png"; sourceTree = "<group>"; };
-		D906A249138AFC4B00F788DA /* layer-c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-c.png"; sourceTree = "<group>"; };
-		D9545947138AB6E100F302A5 /* comic-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "comic-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D954594B138AB6E100F302A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D954594D138AB6E100F302A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D954594F138AB6E100F302A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D9545953138AB6E100F302A5 /* comic-poc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "comic-poc-Info.plist"; sourceTree = "<group>"; };
-		D9545955138AB6E100F302A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D9545957138AB6E100F302A5 /* comic-poc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "comic-poc-Prefix.pch"; sourceTree = "<group>"; };
-		D9545958138AB6E100F302A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D954595A138AB6E100F302A5 /* comic_pocAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comic_pocAppDelegate.h; sourceTree = "<group>"; };
-		D954595B138AB6E100F302A5 /* comic_pocAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = comic_pocAppDelegate.m; sourceTree = "<group>"; };
-		D954595E138AB6E100F302A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		D9545960138AB6E100F302A5 /* comic_pocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comic_pocViewController.h; sourceTree = "<group>"; };
-		D9545961138AB6E100F302A5 /* comic_pocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = comic_pocViewController.m; sourceTree = "<group>"; };
-		D9545964138AB6E100F302A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/comic_pocViewController.xib; sourceTree = "<group>"; };
+		D9E6ABE9138C274C00D40AA1 /* comic-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "comic-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E6ABED138C274C00D40AA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D9E6ABEF138C274C00D40AA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D9E6ABF1138C274C00D40AA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D9E6ABF5138C274C00D40AA1 /* comic-poc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "comic-poc-Info.plist"; sourceTree = "<group>"; };
+		D9E6ABF7138C274C00D40AA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9E6ABF9138C274C00D40AA1 /* comic-poc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "comic-poc-Prefix.pch"; sourceTree = "<group>"; };
+		D9E6ABFA138C274C00D40AA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D9E6ABFC138C274C00D40AA1 /* comic_pocAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comic_pocAppDelegate.h; sourceTree = "<group>"; };
+		D9E6ABFD138C274C00D40AA1 /* comic_pocAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = comic_pocAppDelegate.m; sourceTree = "<group>"; };
+		D9E6AC00138C274C00D40AA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		D9E6AC02138C274C00D40AA1 /* comic_pocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = comic_pocViewController.h; sourceTree = "<group>"; };
+		D9E6AC03138C274C00D40AA1 /* comic_pocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = comic_pocViewController.m; sourceTree = "<group>"; };
+		D9E6AC06138C274C00D40AA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/comic_pocViewController.xib; sourceTree = "<group>"; };
+		D9E6AC0D138C3F5700D40AA1 /* layer-b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-b.png"; sourceTree = "<group>"; };
+		D9E6AC0E138C3F5700D40AA1 /* layer-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-a.png"; sourceTree = "<group>"; };
+		D9E6AC0F138C3F5700D40AA1 /* layer-c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "layer-c.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D9545944138AB6E000F302A5 /* Frameworks */ = {
+		D9E6ABE6138C274C00D40AA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D954594C138AB6E100F302A5 /* UIKit.framework in Frameworks */,
-				D954594E138AB6E100F302A5 /* Foundation.framework in Frameworks */,
-				D9545950138AB6E100F302A5 /* CoreGraphics.framework in Frameworks */,
+				D9E6ABEE138C274C00D40AA1 /* UIKit.framework in Frameworks */,
+				D9E6ABF0138C274C00D40AA1 /* Foundation.framework in Frameworks */,
+				D9E6ABF2138C274C00D40AA1 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D954593C138AB6E000F302A5 = {
+		D9E6ABDE138C274C00D40AA1 = {
 			isa = PBXGroup;
 			children = (
-				D954596E138ACAF500F302A5 /* images */,
-				D9545951138AB6E100F302A5 /* comic-poc */,
-				D954594A138AB6E100F302A5 /* Frameworks */,
-				D9545948138AB6E100F302A5 /* Products */,
+				D9E6AC13138C3F5D00D40AA1 /* images */,
+				D9E6ABF3138C274C00D40AA1 /* comic-poc */,
+				D9E6ABEC138C274C00D40AA1 /* Frameworks */,
+				D9E6ABEA138C274C00D40AA1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D9545948138AB6E100F302A5 /* Products */ = {
+		D9E6ABEA138C274C00D40AA1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9545947138AB6E100F302A5 /* comic-poc.app */,
+				D9E6ABE9138C274C00D40AA1 /* comic-poc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D954594A138AB6E100F302A5 /* Frameworks */ = {
+		D9E6ABEC138C274C00D40AA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D954594B138AB6E100F302A5 /* UIKit.framework */,
-				D954594D138AB6E100F302A5 /* Foundation.framework */,
-				D954594F138AB6E100F302A5 /* CoreGraphics.framework */,
+				D9E6ABED138C274C00D40AA1 /* UIKit.framework */,
+				D9E6ABEF138C274C00D40AA1 /* Foundation.framework */,
+				D9E6ABF1138C274C00D40AA1 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D9545951138AB6E100F302A5 /* comic-poc */ = {
+		D9E6ABF3138C274C00D40AA1 /* comic-poc */ = {
 			isa = PBXGroup;
 			children = (
-				D954595A138AB6E100F302A5 /* comic_pocAppDelegate.h */,
-				D954595B138AB6E100F302A5 /* comic_pocAppDelegate.m */,
-				D954595D138AB6E100F302A5 /* MainWindow.xib */,
-				D9545960138AB6E100F302A5 /* comic_pocViewController.h */,
-				D9545961138AB6E100F302A5 /* comic_pocViewController.m */,
-				D9545963138AB6E100F302A5 /* comic_pocViewController.xib */,
-				D9545952138AB6E100F302A5 /* Supporting Files */,
+				D9E6ABFC138C274C00D40AA1 /* comic_pocAppDelegate.h */,
+				D9E6ABFD138C274C00D40AA1 /* comic_pocAppDelegate.m */,
+				D9E6ABFF138C274C00D40AA1 /* MainWindow.xib */,
+				D9E6AC02138C274C00D40AA1 /* comic_pocViewController.h */,
+				D9E6AC03138C274C00D40AA1 /* comic_pocViewController.m */,
+				D9E6AC05138C274C00D40AA1 /* comic_pocViewController.xib */,
+				D9E6ABF4138C274C00D40AA1 /* Supporting Files */,
 			);
 			path = "comic-poc";
 			sourceTree = "<group>";
 		};
-		D9545952138AB6E100F302A5 /* Supporting Files */ = {
+		D9E6ABF4138C274C00D40AA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D9545953138AB6E100F302A5 /* comic-poc-Info.plist */,
-				D9545954138AB6E100F302A5 /* InfoPlist.strings */,
-				D9545957138AB6E100F302A5 /* comic-poc-Prefix.pch */,
-				D9545958138AB6E100F302A5 /* main.m */,
+				D9E6ABF5138C274C00D40AA1 /* comic-poc-Info.plist */,
+				D9E6ABF6138C274C00D40AA1 /* InfoPlist.strings */,
+				D9E6ABF9138C274C00D40AA1 /* comic-poc-Prefix.pch */,
+				D9E6ABFA138C274C00D40AA1 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D954596E138ACAF500F302A5 /* images */ = {
+		D9E6AC13138C3F5D00D40AA1 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D906A249138AFC4B00F788DA /* layer-c.png */,
-				D906A243138ADB1A00F788DA /* layer-a.png */,
-				D906A244138ADB1A00F788DA /* layer-b.png */,
+				D9E6AC0D138C3F5700D40AA1 /* layer-b.png */,
+				D9E6AC0E138C3F5700D40AA1 /* layer-a.png */,
+				D9E6AC0F138C3F5700D40AA1 /* layer-c.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -121,13 +121,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D9545946138AB6E000F302A5 /* comic-poc */ = {
+		D9E6ABE8138C274C00D40AA1 /* comic-poc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9545968138AB6E100F302A5 /* Build configuration list for PBXNativeTarget "comic-poc" */;
+			buildConfigurationList = D9E6AC0A138C274C00D40AA1 /* Build configuration list for PBXNativeTarget "comic-poc" */;
 			buildPhases = (
-				D9545943138AB6E000F302A5 /* Sources */,
-				D9545944138AB6E000F302A5 /* Frameworks */,
-				D9545945138AB6E000F302A5 /* Resources */,
+				D9E6ABE5138C274C00D40AA1 /* Sources */,
+				D9E6ABE6138C274C00D40AA1 /* Frameworks */,
+				D9E6ABE7138C274C00D40AA1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -135,81 +135,81 @@
 			);
 			name = "comic-poc";
 			productName = "comic-poc";
-			productReference = D9545947138AB6E100F302A5 /* comic-poc.app */;
+			productReference = D9E6ABE9138C274C00D40AA1 /* comic-poc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D954593E138AB6E000F302A5 /* Project object */ = {
+		D9E6ABE0138C274C00D40AA1 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = D9545941138AB6E000F302A5 /* Build configuration list for PBXProject "comic-poc" */;
+			buildConfigurationList = D9E6ABE3138C274C00D40AA1 /* Build configuration list for PBXProject "comic-poc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D954593C138AB6E000F302A5;
-			productRefGroup = D9545948138AB6E100F302A5 /* Products */;
+			mainGroup = D9E6ABDE138C274C00D40AA1;
+			productRefGroup = D9E6ABEA138C274C00D40AA1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9545946138AB6E000F302A5 /* comic-poc */,
+				D9E6ABE8138C274C00D40AA1 /* comic-poc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D9545945138AB6E000F302A5 /* Resources */ = {
+		D9E6ABE7138C274C00D40AA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9545956138AB6E100F302A5 /* InfoPlist.strings in Resources */,
-				D954595F138AB6E100F302A5 /* MainWindow.xib in Resources */,
-				D9545965138AB6E100F302A5 /* comic_pocViewController.xib in Resources */,
-				D906A246138ADB1A00F788DA /* layer-a.png in Resources */,
-				D906A247138ADB1A00F788DA /* layer-b.png in Resources */,
-				D906A24A138AFC4B00F788DA /* layer-c.png in Resources */,
+				D9E6ABF8138C274C00D40AA1 /* InfoPlist.strings in Resources */,
+				D9E6AC01138C274C00D40AA1 /* MainWindow.xib in Resources */,
+				D9E6AC07138C274C00D40AA1 /* comic_pocViewController.xib in Resources */,
+				D9E6AC10138C3F5700D40AA1 /* layer-b.png in Resources */,
+				D9E6AC11138C3F5700D40AA1 /* layer-a.png in Resources */,
+				D9E6AC12138C3F5700D40AA1 /* layer-c.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D9545943138AB6E000F302A5 /* Sources */ = {
+		D9E6ABE5138C274C00D40AA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9545959138AB6E100F302A5 /* main.m in Sources */,
-				D954595C138AB6E100F302A5 /* comic_pocAppDelegate.m in Sources */,
-				D9545962138AB6E100F302A5 /* comic_pocViewController.m in Sources */,
+				D9E6ABFB138C274C00D40AA1 /* main.m in Sources */,
+				D9E6ABFE138C274C00D40AA1 /* comic_pocAppDelegate.m in Sources */,
+				D9E6AC04138C274C00D40AA1 /* comic_pocViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D9545954138AB6E100F302A5 /* InfoPlist.strings */ = {
+		D9E6ABF6138C274C00D40AA1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D9545955138AB6E100F302A5 /* en */,
+				D9E6ABF7138C274C00D40AA1 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D954595D138AB6E100F302A5 /* MainWindow.xib */ = {
+		D9E6ABFF138C274C00D40AA1 /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D954595E138AB6E100F302A5 /* en */,
+				D9E6AC00138C274C00D40AA1 /* en */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		D9545963138AB6E100F302A5 /* comic_pocViewController.xib */ = {
+		D9E6AC05138C274C00D40AA1 /* comic_pocViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D9545964138AB6E100F302A5 /* en */,
+				D9E6AC06138C274C00D40AA1 /* en */,
 			);
 			name = comic_pocViewController.xib;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D9545966138AB6E100F302A5 /* Debug */ = {
+		D9E6AC08138C274C00D40AA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
@@ -235,7 +235,7 @@
 			};
 			name = Debug;
 		};
-		D9545967138AB6E100F302A5 /* Release */ = {
+		D9E6AC09138C274C00D40AA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
@@ -251,7 +251,7 @@
 			};
 			name = Release;
 		};
-		D9545969138AB6E100F302A5 /* Debug */ = {
+		D9E6AC0B138C274C00D40AA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -265,7 +265,7 @@
 			};
 			name = Debug;
 		};
-		D954596A138AB6E100F302A5 /* Release */ = {
+		D9E6AC0C138C274C00D40AA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,25 +282,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9545941138AB6E000F302A5 /* Build configuration list for PBXProject "comic-poc" */ = {
+		D9E6ABE3138C274C00D40AA1 /* Build configuration list for PBXProject "comic-poc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9545966138AB6E100F302A5 /* Debug */,
-				D9545967138AB6E100F302A5 /* Release */,
+				D9E6AC08138C274C00D40AA1 /* Debug */,
+				D9E6AC09138C274C00D40AA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9545968138AB6E100F302A5 /* Build configuration list for PBXNativeTarget "comic-poc" */ = {
+		D9E6AC0A138C274C00D40AA1 /* Build configuration list for PBXNativeTarget "comic-poc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9545969138AB6E100F302A5 /* Debug */,
-				D954596A138AB6E100F302A5 /* Release */,
+				D9E6AC0B138C274C00D40AA1 /* Debug */,
+				D9E6AC0C138C274C00D40AA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D954593E138AB6E000F302A5 /* Project object */;
+	rootObject = D9E6ABE0138C274C00D40AA1 /* Project object */;
 }

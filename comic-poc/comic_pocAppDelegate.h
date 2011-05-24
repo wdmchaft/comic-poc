@@ -2,7 +2,7 @@
 //  comic_pocAppDelegate.h
 //  comic-poc
 //
-//  Created by nimbus on 5/23/11.
+//  Created by nimbus on 5/24/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
