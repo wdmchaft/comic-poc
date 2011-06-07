@@ -6,25 +6,20 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#define SCREEN_WIDTH 1024
+#define SCREEN_HEIGHT 768
+
 #import "comic_pocViewController.h"
+
 
 @implementation comic_pocViewController
 
-@synthesize pageArray, pageA, pageB, pageC, layerA, layerB, layerC;
-
 - (void)dealloc
 {
+    [pageArray release];
+    [scrollView release];
+    
     [super dealloc];
-    
-    [self.pageArray dealloc];
-    
-    [pageA dealloc];
-    [pageB dealloc];
-    [pageC dealloc];
-    
-    [layerA dealloc];
-    [layerB dealloc];
-    [layerC dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,94 +38,64 @@
 {
     [super viewDidLoad];
     
-    // initialize layers
+    PageView *page1 = [[PageView alloc] initWithBackLayer:[UIImage imageNamed:@"layer-a.png"] AndInkLayer:[UIImage imageNamed:@"layer-b.png"] AndSpeechLayer:[UIImage imageNamed:@"layer-c.png"]];
     
-    layerA = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layer-a.png"]];
-    layerB = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layer-b.png"]];
-    layerC = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layer-c.png"]];
+    PageView *page2 = [[PageView alloc] initWithBackLayer:[UIImage imageNamed:@"layer-a-2.png"] AndInkLayer:[UIImage imageNamed:@"layer-b.png"] AndSpeechLayer:[UIImage imageNamed:@"layer-c.png"]];
     
-    layerA.userInteractionEnabled = YES;
-    layerB.userInteractionEnabled = YES;
-    layerC.userInteractionEnabled = YES;
+    PageView *page3 = [[PageView alloc] initWithBackLayer:[UIImage imageNamed:@"layer-a.png"] AndInkLayer:[UIImage imageNamed:@"layer-b-2.png"] AndSpeechLayer:[UIImage imageNamed:@"layer-c.png"]];
     
-    // initialize pages
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width)];
+    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    scrollView.minimumZoomScale = 1.0f;
+    scrollView.maximumZoomScale = 1.5f;
+    scrollView.zoomScale = 1.0f;
+    scrollView.clipsToBounds = YES;
+    scrollView.scrollsToTop = NO;
+    scrollView.scrollEnabled = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.bounces = YES; 
+    scrollView.alwaysBounceVertical = YES;
+    scrollView.alwaysBounceHorizontal = YES;
+    scrollView.bouncesZoom = NO;
+    scrollView.delegate = self;
     
-    pageA = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 1024, 1024)];
-    pageB = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 1024, 1024)];
-    pageC = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 1024, 1024)];
+    pageNum = 0;
+    pageArray = [[NSArray alloc] initWithObjects:page1, page2, page3, nil];
     
-    pageA.backgroundColor = [UIColor redColor];
-    pageB.backgroundColor = [UIColor blueColor];
-    pageC.backgroundColor = [UIColor greenColor];
+    [page1 release];
+    [page2 release];
+    [page3 release];
     
-    pageA.minimumZoomScale = 1.0f;  
-    pageB.minimumZoomScale = 1.0f;
-    pageC.minimumZoomScale = 1.0f;
+    [scrollView addSubview:[pageArray objectAtIndex:pageNum]];
+    [self.view insertSubview:scrollView atIndex:0];
     
-    pageB.maximumZoomScale = 4.0f; 
-    pageC.maximumZoomScale = 4.0f;
-    pageA.maximumZoomScale = 4.0f;
-    
-    pageA.zoomScale = 1.0f;
-    pageB.zoomScale = 1.0f;
-    pageC.zoomScale = 1.0f;
-    
-    pageA.clipsToBounds = NO; 
-    pageB.clipsToBounds = NO; 
-    pageC.clipsToBounds = NO; 
-    
-    pageA.scrollsToTop = NO; 
-    pageB.scrollsToTop = NO;
-    pageC.scrollsToTop = NO; 
-    
-    // this causes warnings
-    pageA.delegate = self;
-    pageB.delegate = self;
-    pageC.delegate = self;
-    
-    pageA.showsHorizontalScrollIndicator = NO;
-    pageB.showsHorizontalScrollIndicator = NO;
-    pageC.showsHorizontalScrollIndicator = NO; 
-    
-    pageA.showsVerticalScrollIndicator = NO;
-    pageB.showsVerticalScrollIndicator = NO;
-    pageC.showsVerticalScrollIndicator = NO;
-    
-    pageA.decelerationRate = 0.5f; 
-    pageB.decelerationRate = 0.5f; 
-    pageC.decelerationRate = 0.5f;
-    
-    pageA.alwaysBounceVertical = YES; 
-    pageB.alwaysBounceVertical = YES; 
-    pageC.alwaysBounceVertical = YES;
-    
-    pageA.alwaysBounceHorizontal = YES;
-    pageB.alwaysBounceHorizontal = YES;
-    pageC.alwaysBounceHorizontal = YES;
-    
-    pageA.bouncesZoom = NO; 
-    pageB.bouncesZoom = NO; 
-    pageC.bouncesZoom = NO;
-    
-    pageA.contentMode = (UIViewContentModeScaleAspectFit);
-    pageB.contentMode = (UIViewContentModeScaleAspectFit); 
-    pageC.contentMode = (UIViewContentModeScaleAspectFit);
-    
-    pageA.autoresizingMask = (UIViewAutoresizingFlexibleHeight);
-    pageB.autoresizingMask = (UIViewAutoresizingFlexibleHeight);
-    pageC.autoresizingMask = (UIViewAutoresizingFlexibleHeight);
-    
-    // paging stuff
-    
-    page = 0;
-    
-    self.pageArray = [NSArray arrayWithObjects:pageA, pageB, pageC, nil];
-    [self.view insertSubview:[self.pageArray objectAtIndex:page] atIndex:0];
-    
-    // populate initial page with content
-    [[self.pageArray objectAtIndex:page] insertSubview:layerA atIndex:0];
-    [[self.pageArray objectAtIndex:page] insertSubview:layerB atIndex:1];
-    [[self.pageArray objectAtIndex:page] insertSubview:layerC atIndex:2];
+    // swipe gestures
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(prevPage)];
+    recognizer.delaysTouchesBegan = TRUE;
+    [scrollView addGestureRecognizer: recognizer];
+    [recognizer release];
+     
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(nextPage)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [scrollView addGestureRecognizer: recognizer];
+    [recognizer release];
+    [scrollView delaysContentTouches];
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)view {
+    if (view.zoomScale != 1.0) {
+        // Zooming, disable scrolling
+        view.scrollEnabled = TRUE;
+    } else {
+        // Not zoomed, let the scroll view scroll
+        view.scrollEnabled = FALSE;
+    }
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)view {
+    return [view.subviews objectAtIndex:0];
 }
 
 - (void)viewDidUnload
@@ -138,99 +103,65 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    pageA = nil;
-    pageB = nil;
-    pageC = nil;
-    
-    layerA = nil;
-    layerB = nil;
-    layerC = nil;
+    scrollView = nil;
+    pageArray = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return YES;
-}
-
-- (IBAction)prevPressed {
-    if (page > 0) {
-        [UIView transitionWithView:[self.pageArray objectAtIndex:page] duration:0.5
-                           options:UIViewAnimationOptionTransitionCurlUp
-                        animations:^ { 
-                            [[self.pageArray objectAtIndex:page] setHidden:YES];
-                            [self.view insertSubview:[self.pageArray objectAtIndex:(page - 1)] atIndex:0];
-                        }
-                        completion:^(BOOL completed) {
-                            if (completed) {
-                                [[self.pageArray objectAtIndex:page] removeFromSuperview];
-                                [[self.pageArray objectAtIndex:page] setHidden:NO];
-                                
-                                page--;
-                            }
-                        }
-         ];        
-        // move content to prev page
-        [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerA atIndex:0];
-        [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerB atIndex:1];
-        [[self.pageArray objectAtIndex:(page - 1)] insertSubview:layerC atIndex:2];
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        return YES;
     }
+    
+    return NO;
 }
 
-- (IBAction)nextPressed {
-    if (page < [self.pageArray count] - 1) {
-        [UIView transitionWithView:[self.pageArray objectAtIndex:page] duration:0.5
-                           options:UIViewAnimationOptionTransitionCurlUp
-                        animations:^ { 
-                            [[self.pageArray objectAtIndex:page] setHidden:YES];
-                            [self.view insertSubview:[self.pageArray objectAtIndex:(page + 1)] atIndex:0];
-                        }
-                        completion:^(BOOL completed) {
-                            if (completed) {
-                                [[self.pageArray objectAtIndex:page] removeFromSuperview];
-                                [[self.pageArray objectAtIndex:page] setHidden:NO];
-
-                                page++;
-                            }
-                        }
+- (void) prevPage {
+    if (pageNum > 0) {
+        [UIView animateWithDuration:1.0 
+                         animations:^ { 
+                             [[pageArray objectAtIndex:pageNum] setAlpha:0.0];
+                             [scrollView insertSubview:[pageArray objectAtIndex:(pageNum - 1)] atIndex:0];
+                         }
+                         completion:^(BOOL completed) {
+                             if (completed) {
+                                 [[pageArray objectAtIndex:pageNum] removeFromSuperview];
+                                 [[pageArray objectAtIndex:pageNum] setAlpha:1.0];
+                                 pageNum--;
+                             }
+                         }
          ];
-        
-        // move content to next page
-        [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerA atIndex:0];
-        [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerB atIndex:1];
-        [[self.pageArray objectAtIndex:(page + 1)] insertSubview:layerC atIndex:2];
     }
 }
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return [self.pageArray objectAtIndex:page];
-}
-
-- (IBAction) layerAToggle:(id)sender {
-    if (layerA.hidden) {
-        layerA.hidden = NO;
-    }
-    else {
-        layerA.hidden = YES;
-    }
-}
-
-- (IBAction) layerBToggle:(id)sender {
-    if (layerB.hidden) {
-        layerB.hidden = NO;
-    }
-    else {
-        layerB.hidden = YES;
+- (void) nextPage {
+    if (pageNum < [pageArray count] - 1) {
+        [UIView animateWithDuration:1.0 
+                         animations:^ { 
+                             [[pageArray objectAtIndex:pageNum] setAlpha:0.0];
+                             [scrollView insertSubview:[pageArray objectAtIndex:(pageNum + 1)] atIndex:0];
+                         }
+                         completion:^(BOOL completed) {
+                            if (completed) {
+                                [[pageArray objectAtIndex:pageNum] removeFromSuperview];
+                                [[pageArray objectAtIndex:pageNum] setAlpha:1.0];
+                                pageNum++;
+                             }
+                         }
+         ];
     }
 }
 
-- (IBAction) layerCToggle:(id)sender {
-    if (layerC.hidden) {
-        layerC.hidden = NO;
-    }
-    else {
-        layerC.hidden = YES;
-    }
+- (IBAction) backToggle:(id)sender {
+    [[pageArray objectAtIndex:pageNum] backToggle];
+}
+
+- (IBAction) inkToggle:(id)sender {
+    [[pageArray objectAtIndex:pageNum] inkToggle];
+}
+
+- (IBAction) speechToggle:(id)sender {
+    [[pageArray objectAtIndex:pageNum] speechToggle];
 }
 
 @end

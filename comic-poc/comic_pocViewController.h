@@ -7,20 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageView.h"
 
-@interface comic_pocViewController : UIViewController {
-    NSInteger page;
+@interface comic_pocViewController : UIViewController <UIScrollViewDelegate> {
+    NSInteger pageNum;
     NSInteger pageCount;
+    NSArray *pageArray;
+    UIScrollView *scrollView;
 }
-
-@property (nonatomic, retain) NSArray *pageArray;
-
-@property (nonatomic, retain) UIScrollView *pageA;
-@property (nonatomic, retain) UIScrollView *pageB;
-@property (nonatomic, retain) UIScrollView *pageC;
-
-@property (nonatomic, retain) UIImageView *layerA;
-@property (nonatomic, retain) UIImageView *layerB;
-@property (nonatomic, retain) UIImageView *layerC;
 
 @end
